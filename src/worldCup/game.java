@@ -36,4 +36,17 @@ public class game{
     public int combinedScore() {
     	return homeScore+awayScore;
     }
+    public String getOutputString() {
+    	return(displaySides()[0]+" "+displayScore()[0])+" - "+displaySides()[1]+" "+displayScore()[1];
+    }
+    public boolean getEitherPlayer(String input) {
+    	if(this.homeTeam.equals(input)|this.awayTeam.equals(input)) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    	
+    }
+    
 }

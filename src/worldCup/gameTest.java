@@ -53,6 +53,15 @@ class gameTest {
 		assertTrue(game1.combinedScore()==1);
 		game1.increaseAwayScore(1);
 		assertTrue(game1.combinedScore()==2);
+	}	
+	@Test
+	void testEitherPlayer() {
+		assertTrue(game1.getEitherPlayer("Mexico")==true);
+		assertTrue(game1.getEitherPlayer("Germany")==false);
 	}
+	
+
+	
+	
 
 }
