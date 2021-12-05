@@ -97,6 +97,20 @@ class AllGamesQueueTest {
 		currentlyPlayedGames.getGameByPosition(4).increaseAwayScore(7);
 		currentlyPlayedGames.removeByPosition(1);
 		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGames();
+		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("India 3 - Canada 7"));
+
+		
+
+	}
+	
+	@Test
+	void removeNonexistantGame() {
+		AllGamesQueue currentlyPlayedGames = new AllGamesQueue();
+		currentlyPlayedGames.addNewGame(new game("India","Canada"));
+		currentlyPlayedGames.getGameByPosition(0).increaseHomeScore(1);
+		currentlyPlayedGames.getGameByPosition(0).increaseAwayScore(8);
+		currentlyPlayedGames.removeByPosition(1);
+		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGames();
 		//assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("Spain 0 - USA 5"));
 		for(int i=0;i<OrderedGames.size();i++) {
 			System.out.println(OrderedGames.get(i).getOutputString());

@@ -19,7 +19,14 @@ public class AllGamesQueue {
 		return(allGames.remove(gameToRemove));
 	}
 	public void removeByPosition(int positionToRemove) {
-		allGames.remove(positionToRemove);
+		try{
+			allGames.remove(positionToRemove);
+			}
+			catch (ArrayIndexOutOfBoundsException exception) { //to prevent data loss, the out of bounds is replaced with a message
+				System.out.println("There is no game with this index");
+				System.out.println("\nSelect another game to stop");
+				
+			}
 	}
 	
 	public game getGameByPosition(int positionToGet) {

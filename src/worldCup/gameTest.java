@@ -28,6 +28,14 @@ class gameTest {
 		game1.increaseHomeScore(1);
 		assertTrue(game1.displayScore()[0]==1);
 	}
+	
+	@Test
+	void testIncreaseBothScores() {
+		assertTrue(game1.displayScore()[0]==0);
+		game1.increaseBothScores(1,2);
+		assertTrue(game1.displayScore()[0]==1);
+		assertTrue(game1.displayScore()[1]==2);
+	}
 
 	@Test
 	void testIncreaseAwayScore() {
