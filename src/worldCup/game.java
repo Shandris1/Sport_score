@@ -26,12 +26,32 @@ public class game{
         this.awayScore = 0;
     }
     
-    public void increaseHomeScore(int homeScore){
-        this.homeScore += homeScore;
+    //debug functions to increase score by multiple points
+    public void increaseHomeScore(int homeScoreIncrease){
+    	if (homeScore + homeScoreIncrease > 0) {
+        this.homeScore += homeScoreIncrease; 
+    	}else {
+    		homeScore = 0;
+    		System.out.println("attempt to subtract too much score, setting to 0 ");
+    	}
     }
     
-    public void increaseAwayScore(int awayScore){
-        this.awayScore += awayScore;
+    public void homeGoal() {
+    	this.homeScore += 1;
+    }
+    
+    //debug functions to increase score by multiple points
+    public void increaseAwayScore(int awayScoreIncrease){
+    	if (awayScore + awayScoreIncrease > 0) {
+        this.awayScore += awayScoreIncrease;
+	}else {
+		homeScore = 0;
+		System.out.println("attempt to subtract too much score, setting to 0 ");
+	}
+    }
+    
+    public void awayGoal() {
+    	this.awayScore += 1;
     }
     
     //returns score of both sides

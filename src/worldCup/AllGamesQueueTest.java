@@ -18,7 +18,7 @@ class AllGamesQueueTest {
 		currentlyPlayedGames.addNewGame(new game("India","Canada"));
 		currentlyPlayedGames.getGameByPosition(0).increaseHomeScore(5);
 		currentlyPlayedGames.getGameByPosition(3).increaseHomeScore(3);
-		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGames();
+		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGamesSortedByScore();
 		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("Russia 5 - China 0"));
 		assertTrue(OrderedGames.get(1).getOutputString().equalsIgnoreCase("Phillipines 3 - UK 0"));
 
@@ -34,7 +34,7 @@ class AllGamesQueueTest {
 		currentlyPlayedGames.addNewGame(new game("India","Canada"));
 		currentlyPlayedGames.getGameByPosition(1).increaseHomeScore(5);
 		currentlyPlayedGames.getGameByPosition(3).increaseHomeScore(3);
-		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGames();
+		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGamesSortedByScore();
 		
 		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("Ghana 5 - Portigal 0"));
 
@@ -52,7 +52,7 @@ class AllGamesQueueTest {
 		currentlyPlayedGames.getGameByPosition(0).increaseHomeScore(5);
 		currentlyPlayedGames.getGameByPosition(2).increaseAwayScore(5);
 		currentlyPlayedGames.getGameByPosition(3).increaseHomeScore(3);
-		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGames();
+		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGamesSortedByScore();
 		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("Spain 0 - USA 5"));
 
 	}
@@ -71,7 +71,7 @@ class AllGamesQueueTest {
 		currentlyPlayedGames.getGameByPosition(2).increaseAwayScore(5);
 		currentlyPlayedGames.getGameByPosition(3).increaseHomeScore(3);
 		currentlyPlayedGames.removeByPosition(1);
-		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGames();
+		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGamesSortedByScore();
 		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("Spain 0 - USA 5"));
 		
 
@@ -96,7 +96,7 @@ class AllGamesQueueTest {
 		currentlyPlayedGames.getGameByPosition(4).increaseHomeScore(3);
 		currentlyPlayedGames.getGameByPosition(4).increaseAwayScore(7);
 		currentlyPlayedGames.removeByPosition(1);
-		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGames();
+		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGamesSortedByScore();
 		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("India 3 - Canada 7"));
 
 		
@@ -110,13 +110,8 @@ class AllGamesQueueTest {
 		currentlyPlayedGames.getGameByPosition(0).increaseHomeScore(1);
 		currentlyPlayedGames.getGameByPosition(0).increaseAwayScore(8);
 		currentlyPlayedGames.removeByPosition(1);
-		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGames();
-		//assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("Spain 0 - USA 5"));
-		for(int i=0;i<OrderedGames.size();i++) {
-			System.out.println(OrderedGames.get(i).getOutputString());
-		}
-		
-
+		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGamesSortedByScore();
+		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("India 1 - Canada 8"));
 	}
 
 }

@@ -32,9 +32,9 @@ public class AllGamesQueue {
 		try{
 			allGames.remove(positionToRemove);
 			}
-			catch (ArrayIndexOutOfBoundsException exception) { //to prevent data loss, the out of bounds is replaced with a message
+			catch (IndexOutOfBoundsException exception) { //to prevent data loss, the out of bounds is replaced with a message
 				System.out.println("There is no game with this index");
-				System.out.println("\nSelect another game to stop");
+				System.out.println("Select another game to stop");
 				
 			}
 	}
@@ -42,6 +42,14 @@ public class AllGamesQueue {
 	//Returns a game according to its position
 	public game getGameByPosition(int positionToGet) {
 		return allGames.get(positionToGet);
+	}
+	
+
+	//Prints all games in the of their position in DB
+	public void printAllGamesForRemoval() {
+		for(int i = 0; i < allGames.size(); i++) {
+			System.out.println(i+allGames.get(i).getOutputString());
+		}
 	}
 	
 	//Prints all games in the order of highest score to lowest
@@ -59,7 +67,7 @@ public class AllGamesQueue {
 		
 	
 	//returns all games in the order or highest score to lowest
-	public ArrayList<game> getAllGames() {
+	public ArrayList<game> getAllGamesSortedByScore() {
 		ArrayList<game> tempPriorityQueue = allGames;
 		int[] totalScores = new int[allGames.size()];
 		ArrayList<game> returnList = new ArrayList<game>();

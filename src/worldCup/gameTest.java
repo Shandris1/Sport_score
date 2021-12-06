@@ -30,6 +30,20 @@ class gameTest {
 	}
 	
 	@Test
+	void testHomeGoal() {
+		assertTrue(game1.displayScore()[0]==0);
+		game1.homeGoal();
+		assertTrue(game1.displayScore()[0]==1);
+	}
+	
+	@Test
+	void testAwayGoal() {
+		assertTrue(game1.displayScore()[1]==0);
+		game1.awayGoal();
+		assertTrue(game1.displayScore()[1]==1);
+	}
+	
+	@Test
 	void testIncreaseBothScores() {
 		assertTrue(game1.displayScore()[0]==0);
 		game1.increaseBothScores(1,2);
