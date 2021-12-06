@@ -20,6 +20,7 @@ game.getOutputString(); - creates output string formated as "HOME HOMESCORE - AW
 
 AllGamesQueue.addNewGame(new game("Russia","China")); - add a Russia vs China game into the array
 AllGamesQueue.getGameByPosition(0).increaseHomeScore(5); - increase the score of the oldest game by 5 for home
-AllGamesQueue.removeByPosition(1); remove second oldest game
+AllGamesQueue.printAllGamesPosition() - print all games position in DB. Can be used to make sure correct game is removed
+AllGamesQueue.removeByPosition(1); remove second oldest game. This shifts all newer games one space to left
 
 AllGamesQueue.getAllGamesSortedByScore() - returns an array list of all games sorted by score, with newest game on top.

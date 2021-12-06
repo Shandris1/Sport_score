@@ -98,6 +98,7 @@ class AllGamesQueueTest {
 		currentlyPlayedGames.removeByPosition(1);
 		ArrayList<game> OrderedGames = currentlyPlayedGames.getAllGamesSortedByScore();
 		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("India 3 - Canada 7"));
+		assertTrue(OrderedGames.get(0).getOutputString().equalsIgnoreCase("India 3 - Canada 7"));
 
 		
 

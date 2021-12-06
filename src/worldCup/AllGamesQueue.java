@@ -46,7 +46,7 @@ public class AllGamesQueue {
 	
 
 	//Prints all games in the of their position in DB
-	public void printAllGamesForRemoval() {
+	public void printAllGamesPosition() {
 		for(int i = 0; i < allGames.size(); i++) {
 			System.out.println(i+allGames.get(i).getOutputString());
 		}
@@ -56,17 +56,28 @@ public class AllGamesQueue {
 	public void printAllGames() {
 		ArrayList<game> tempPriorityQueue = allGames;
 		int[] totalScores = new int[allGames.size()];
+		ArrayList<game> returnList = new ArrayList<game>();
 		for(int i = 0; i < allGames.size(); i++) {
 			totalScores[i]=allGames.get(i).combinedScore();
 		}
-		
-		for(int i = 0; i < allGames.size(); i++) {
-			totalScores[i]=allGames.get(i).combinedScore();
+		Arrays.parallelSort(totalScores);
+		for(int i = totalScores.length-1; i > -1; i-- ) {
+			for(int j = tempPriorityQueue.size()-1; j> -1; j--) {
+				if(totalScores[i] == tempPriorityQueue.get(j).combinedScore()) {
+					returnList.add(tempPriorityQueue.get(j));
+					tempPriorityQueue.remove(j);
+					break;
+				}else {
+				}		
+			}
+		}
+		for (int i = 0; i < returnList.size();i++) {
+			System.out.println(returnList.get(i).getOutputString());
 		}
 	}
 		
 	
-	//returns all games in the order or highest score to lowest
+	//returns ArrayList of all games in the order or highest score to lowest
 	public ArrayList<game> getAllGamesSortedByScore() {
 		ArrayList<game> tempPriorityQueue = allGames;
 		int[] totalScores = new int[allGames.size()];
@@ -85,10 +96,7 @@ public class AllGamesQueue {
 				}		
 			}
 		}
-		
 		return(returnList);
-		
-		
 	}
 	
 	

@@ -22,17 +22,10 @@ public class worldCupScore {
 		game MB = new game("Mexico","Brazil"); 
 		
 		AllGamesQueue currentlyPlayedGames = new AllGamesQueue();
+		currentlyPlayedGames.addNewGame(MB);
 		
 		
-		System.out.println(currentlyPlayedGames);
+		currentlyPlayedGames.printAllGames();
 	}
-	
-	public void addGame(String newGame){
-		String[] newGames = new String[2]; 
-		newGames = newGame.split(",",2);
-		currentlyPlayedGames.addNewGame(new game(newGames[0],newGames[1]));
-		System.out.println(currentlyPlayedGames.getAllGames());
-	}
-	
 
 }

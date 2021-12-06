@@ -42,7 +42,7 @@ public class game{
     
     //debug functions to increase score by multiple points
     public void increaseAwayScore(int awayScoreIncrease){
-    	if (awayScore + awayScoreIncrease > 0) {
+    	if (awayScore + awayScoreIncrease >= 0) {
         this.awayScore += awayScoreIncrease;
 	}else {
 		homeScore = 0;
