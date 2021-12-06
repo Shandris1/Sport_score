@@ -41,7 +41,11 @@ public class AllGamesQueue {
 	
 	//Returns a game according to its position
 	public game getGameByPosition(int positionToGet) {
-		return allGames.get(positionToGet);
+		try {return allGames.get(positionToGet);}
+		catch(IndexOutOfBoundsException e) {
+			System.out.println("no such Game exists");
+			return new game("0","0");//throws an orphan game to prevent error in interactive library
+		}
 	}
 	
 

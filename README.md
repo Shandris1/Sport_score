@@ -24,3 +24,5 @@ AllGamesQueue.printAllGamesPosition() - print all games position in DB. Can be u
 AllGamesQueue.removeByPosition(1); remove second oldest game. This shifts all newer games one space to left
 
 AllGamesQueue.getAllGamesSortedByScore() - returns an array list of all games sorted by score, with newest game on top.
+
+The library is designed to be used interactively, hence the nature of the errors and and catching some of the errors

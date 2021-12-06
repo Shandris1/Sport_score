@@ -17,7 +17,6 @@ public class worldCupScore {
 	private AllGamesQueue currentlyPlayedGames = new AllGamesQueue();
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		game MB = new game("Mexico","Brazil"); 
 		
